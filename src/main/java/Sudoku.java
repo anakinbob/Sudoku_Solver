@@ -1,9 +1,5 @@
 import java.lang.reflect.Array;
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
-import static java.util.stream.Collectors.toSet;
 
 public class Sudoku {
     private int _puzzleSize;
@@ -71,10 +67,17 @@ public class Sudoku {
         return row;
     }
 
+    //box nums are labelled from 0 -> puzzlsize-1
     private Set<Integer> extractBox(int boxNum) {
         Set<Integer> box = new HashSet<>();
-        int topLeftBoxIndexRow = 0;
-        int topLeftBoxIndexColumn = 0;
+        int sizeRoot = (int)Math.sqrt(_puzzleSize);
+        int topLeftBoxIndexX = (boxNum % sizeRoot)*sizeRoot;
+        int topLeftBoxIndexY = ((int)Math.floor(boxNum/sizeRoot))/sizeRoot;;
+        for(int i = 0; i < _puzzleSize; i++) {
+            for(int j = 0; j < _puzzleSize; j++) {
+
+            }
+        }
         return null;
     }
 
